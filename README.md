@@ -13,7 +13,7 @@ Repositoryt är indelat i flera grenar, var och en demonstrerar en specifik meto
 ## Användning
 För att använda koden i detta repository, klona först repositoryt till din lokala maskin. Du kan sedan växla mellan de olika grenarna för att utforska de olika metoderna:
 
-git clone https://github.com/ditt-användarnamn/ditt-repository.git
+git clone https://github.com/TeacherArea/PRG2_Managing_Files.git
 
 cd ditt-repository
 
