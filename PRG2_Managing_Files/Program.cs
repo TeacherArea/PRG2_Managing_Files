@@ -8,18 +8,19 @@ namespace WriteReadToFile
         {
             string userName = "Pelle Pelleson";
             int guesses = 8;
-            Console.WriteLine("Hello World! And here is the High Scores: ");
-           
-                       SaveHighScore(userName, guesses);
+            Console.WriteLine("Hello World! And here is the High Scores:");
+            SaveHighScore(userName, guesses);
             LoadHighScores();
         }
-        static private void SaveHighScore(string userName,
-       int guesses)
+        static private void SaveHighScore(string userName, int guesses)
         {
             string filePath = "highscores.txt";
             string scoreEntry = $"{userName} - {guesses}\n";
 
-            File.AppendAllText(filePath, scoreEntry);
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.Write(scoreEntry);
+            }
         }
         static private void LoadHighScores()
         {
@@ -27,14 +28,14 @@ namespace WriteReadToFile
 
             if (File.Exists(filePath))
             {
-                string[] scores = File.ReadAllLines(filePath);
-
-                foreach (string s in scores)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    Console.WriteLine(s);
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
                 }
-                //listBoxHighScores.Items.Clear();
-                //listBoxHighScores.Items.AddRange(scores);
             }
         }
     }
