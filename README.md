@@ -10,7 +10,7 @@ Repositoryt är indelat i flera grenar, var och en demonstrerar en specifik meto
 
 3. **with-json-and-oop**: Introducerar JSON-serialisering och deserialisering för att hantera komplexa datatyper, och visar hur man kan påbörja en struktur av projektet på ett mer objektorienterat sätt. Detta är användbart för att spara objekt och deras tillstånd på ett mer formatoberoende sätt.
    
-5. **with-json-and-mvvm**: Ramverket MVVM förordar att separera logik, UI, data och all annan användning än mer. I detta fall simuleras ett MAUI där Service hanterar datasparning för att enkelt kunna byta till annan spafunktionalitet och då påverka resten av projektet minimalt.
+5. **with-json-and-mvvm**: Ramverket MVVM förordar att separera logik, UI, data och all annan användning än mer. I detta fall simuleras ett MAUI där Services hanterar datasparning för att enkelt kunna byta till annan spafunktionalitet och då påverka resten av projektet minimalt.
 
 ## Användning
 För att använda koden i detta repository, klona först repositoryt till din lokala maskin. Du kan sedan växla mellan de olika grenarna för att utforska de olika metoderna:
