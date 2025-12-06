@@ -1,23 +1,35 @@
-﻿using System;
-using System.IO;
-namespace WriteReadToFile
+﻿namespace WriteReadToFile
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string userName = "Pelle Pelleson";
-            int guesses = 8;
-            Console.WriteLine("Hello World! And here is the High Scores: ");
-           
-                       SaveHighScore(userName, guesses);
+            Console.WriteLine("Feed me with players and their scores.");
+            string choice = "Go";
+            while (true)
+            {
+                if(choice != "n")
+                {
+                    Console.Write("Write a players name: ");
+                    string userName = Console.ReadLine();
+                    Console.Write("Write the players highscore: ");
+                    int score = int.Parse(Console.ReadLine());
+                    SaveHighScore(userName, score);
+                    Console.WriteLine("Save another player? [y/n]");
+                    choice = Console.ReadLine();
+                }
+                else
+                {
+                    break;
+                }
+            }
+
             LoadHighScores();
         }
-        static private void SaveHighScore(string userName,
-       int guesses)
+        static private void SaveHighScore(string userName, int score)
         {
             string filePath = "highscores.txt";
-            string scoreEntry = $"{userName} - {guesses}\n";
+            string scoreEntry = $"{userName} - {score}\n";
 
             File.AppendAllText(filePath, scoreEntry);
         }
@@ -33,8 +45,6 @@ namespace WriteReadToFile
                 {
                     Console.WriteLine(s);
                 }
-                //listBoxHighScores.Items.Clear();
-                //listBoxHighScores.Items.AddRange(scores);
             }
         }
     }
