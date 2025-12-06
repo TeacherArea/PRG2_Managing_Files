@@ -1,10 +1,13 @@
-﻿namespace PRG2_Managing_Files
+﻿using System.Threading.Tasks;
+
+namespace PRG2_Managing_Files
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var manager= new HighScoreManager();
+            await manager.LoadPlayers();
 
             Console.WriteLine("Feed me with players and their scores.");
 
