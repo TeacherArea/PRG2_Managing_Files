@@ -1,5 +1,5 @@
 # Exempel på Filhantering i C#
-Detta repository innehåller tre exempel på hur man kan hantera att spara till och läsa från filer i C#, och är tänkt att användas i pedagogiskt syfte. Exemplen visar olika metoder och illustrerar övergången från enkel filhantering till en mer objektorienterad ansats.
+Detta repository innehåller fyra exempel på hur man kan hantera att spara till och läsa från filer i C#, och är tänkt att användas i pedagogiskt syfte. Exemplen visar olika metoder och illustrerar övergången från enkel filhantering till en mer objektorienterad ansats.
 
 ## Grenar (Branches) i Repositoryt
 Repositoryt är indelat i flera grenar, var och en demonstrerar en specifik metod. Tanken är att gå igenom exemplen/brancherna i följande ordning
