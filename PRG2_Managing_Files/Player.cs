@@ -1,4 +1,4 @@
-﻿namespace PRG2_Managing_Files.Model
+﻿namespace PRG2_Managing_Files
 {
     public class Player
     {
