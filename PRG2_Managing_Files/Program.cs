@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-namespace WriteReadToFile
+﻿namespace WriteReadToFile
 {
     internal class Program
     {
