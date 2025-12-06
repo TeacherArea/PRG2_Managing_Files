@@ -3,12 +3,12 @@ using PRG2_Managing_Files.Services;
 
 namespace PRG2_Managing_Files.View
 {
-    internal class Program
+    internal class MainPage
     {
         static void Main(string[] args)
         {
             var dataService = new DataService();
-            var vm = new HighScoreViewModel(dataService);
+            var vm = new MainPageViewModel(dataService); // kopplingen där ViewModel och DataService
 
             Console.WriteLine("Feed me with players and their scores.");
 
@@ -24,13 +24,12 @@ namespace PRG2_Managing_Files.View
 
                 Console.Write("Save another player? [y/n]: ");
                 string choice = (Console.ReadLine() ?? "").ToLower();
-                if (choice == "n")
-                    break;
+                if (choice == "n") break;
             }
 
             Console.WriteLine("High Scores:");
 
-            foreach (var player in vm.Players)
+            foreach (var player in vm.PlayersList)
             {
                 Console.WriteLine($"{player.Name} - {player.HighScore}");
             }

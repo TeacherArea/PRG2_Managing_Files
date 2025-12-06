@@ -3,16 +3,16 @@ using PRG2_Managing_Files.Services;
 
 namespace PRG2_Managing_Files.ViewModel
 {
-    public class HighScoreViewModel
+    public class MainPageViewModel
     {
         private readonly DataService dataService;
 
         public string CurrentName { get; set; } = "";
         public int CurrentScore { get; set; }
 
-        public List<Player> Players { get; private set; } = new();
+        public List<Player> PlayersList { get; private set; } = new();
 
-        public HighScoreViewModel(DataService dataService)
+        public MainPageViewModel(DataService dataService)
         {
             this.dataService = dataService;
             LoadPlayers();
@@ -20,7 +20,7 @@ namespace PRG2_Managing_Files.ViewModel
 
         public void LoadPlayers()
         {
-            Players = dataService.Load();
+            PlayersList = dataService.Load();
         }
 
         public void AddPlayer()
@@ -31,8 +31,8 @@ namespace PRG2_Managing_Files.ViewModel
                 HighScore = CurrentScore
             };
 
-            Players.Add(newPlayer);
-            dataService.Save(Players);
+            PlayersList.Add(newPlayer);
+            dataService.Save(PlayersList);
         }
     }
 }
