@@ -7,19 +7,19 @@ namespace PRG2_Managing_Files.Services
     {
         private readonly string filePath = "highscores.json";
 
-        public List<Player> Load()
+        public async Task<List<Player>> Load()
         {
             if (!File.Exists(filePath))
                 return new List<Player>();
 
-            string json = File.ReadAllText(filePath);
+            string json = await File.ReadAllTextAsync(filePath);
             return JsonSerializer.Deserialize<List<Player>>(json) ?? new List<Player>();
         }
 
-        public void Save(List<Player> players)
+        public async Task Save(List<Player> players)
         {
             string json = JsonSerializer.Serialize(players, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            await File.WriteAllTextAsync(filePath, json);
         }
     }
 }

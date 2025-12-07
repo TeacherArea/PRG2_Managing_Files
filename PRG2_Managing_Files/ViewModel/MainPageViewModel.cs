@@ -18,9 +18,9 @@ namespace PRG2_Managing_Files.ViewModel
             LoadPlayers();
         }
 
-        public void LoadPlayers()
+        public async Task LoadPlayers() // notera async/await och Task som retur
         {
-            PlayersList = dataService.Load();
+            PlayersList = await dataService.Load();
         }
 
         public void AddPlayer()
